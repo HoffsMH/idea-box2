@@ -1,6 +1,8 @@
 <div class="row first-content-row">
   <div class="col l8 offset-l2">
     <div class="card-panel">
+      <div id='errors-row' class="row errors-row green lighten-3">
+      </div>
       <%= form_for :idea do |f| %>
       <div class='row'>
         <div class='col l4'>
@@ -16,7 +18,7 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <%= f.text_field :tage, placeholder: "Your tags here (separated by spaces)"%>
+          <%= f.text_field :tags, placeholder: "Your tags here (separated by spaces)"%>
           <label for="idea_body">Tags</label>
         </div>
       </div>
