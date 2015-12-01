@@ -30,6 +30,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rescue'
   gem 'rspec-rails'
+  gem 'simplecov'
 end
 
 group :development do
