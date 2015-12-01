@@ -1,7 +1,6 @@
+
 function add_idea(idea_data) {
-  idea_data = {
-    "name": "poop",
-    "login": "hi"
-  }
-    $(".first-content-row").append(_.template('Hello <%= name %> (logins: <%= login.length %>)')(idea_data))
+    idea_template().done(function (data) {
+    $(".first-content-row").append(_.template(data)(idea_data))
+  })
 }
