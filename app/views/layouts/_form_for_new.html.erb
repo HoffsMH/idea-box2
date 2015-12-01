@@ -1,0 +1,31 @@
+<div class="row first-content-row">
+  <div class="col l8 offset-l2">
+    <div class="card-panel">
+      <%= form_for :idea do |f| %>
+      <div class='row'>
+        <div class='col l4'>
+          <label for="idea_title">Title:</label>
+          <%= f.text_field :title, placeholder: "Name your idea!"%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="idea_body" class="materialize-textarea" cols=100 rows=100 name="idea[body]" placeholder="Your great Idea here!"></textarea>
+          <label for="idea_body">Body:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_field :tage, placeholder: "Your tags here (separated by spaces)"%>
+          <label for="idea_body">Tags</label>
+        </div>
+      </div>
+      <div class="row">
+          <a class="col l4 offset-l4 waves-effect waves-light btn-large green lighten-1">Submit</a>
+
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
