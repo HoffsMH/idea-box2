@@ -1,4 +1,5 @@
-<div class="row">
+
+<div id="2" class="row idea">
   <div class="col l8 offset-l2">
     <div class="card-panel">
       <%= form_for :idea do |f| %>
@@ -9,15 +10,25 @@
             Some title here
           </div>
         </div>
-        <div class='col l1 right'>
-          <i class="material-icons">thumb_up</i>
-        </div>
-        <div class='col l1 right'>
-          <i class="material-icons">thumb_down</i>
-        </div>
-        <div class='col l1 right'>
-          swill
-        </div>
+
+          <div class='col l1 right'>
+            <a class="idea-btn delete-idea-btn">
+              <i class="material-icons">clear</i>
+            </a>
+          </div>
+          <div class='col l1 right'>
+            <a class="idea-btn rate-btn-up">
+              <i class="material-icons">thumb_up</i>
+            </a>
+          </div>
+          <div class='col l1 right'>
+            <a class="idea-btn rate-btn-down btn-small">
+              <i class="material-icons">thumb_down</i>
+            </a>
+          </div>
+          <div class='col l1 right'>
+            swill
+          </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
@@ -41,7 +52,7 @@
       <div class="row">
         <div class="input-field col s12">
           <h5>Tags:</h5>
-          <div class="body-content idea-content">
+          <div class="tag-content idea-content">
             some tags here   some tags here  some tags here  some tags here  some tags here  some tags here  some tags here  some body here  some body here
           </div>
         </div>
