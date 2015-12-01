@@ -1,0 +1,54 @@
+<div id="<%= id %>" class="row idea">
+  <div class="col l8 offset-l2">
+    <div class="card-panel">
+      <div class='row'>
+        <div class='col l4'>
+          <h5>Title:</h5>
+          <div class="title-content idea-content">
+            <%= title %>
+          </div>
+        </div>
+
+          <div class='col l1 right'>
+            <a class="idea-btn delete-idea-btn">
+              <i class="material-icons">clear</i>
+            </a>
+          </div>
+          <div class='col l1 right'>
+            <a class="idea-btn rate-btn-up">
+              <i class="material-icons">thumb_up</i>
+            </a>
+          </div>
+          <div class='col l1 right'>
+            <a class="idea-btn rate-btn-down btn-small">
+              <i class="material-icons">thumb_down</i>
+            </a>
+          </div>
+          <div class='col l1 right'>
+            <%= quality %>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <h5>Body:</h5>
+          <div class="body-content idea-content">
+            <%= body %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <h5>Tags:</h5>
+          <div class="tag-content idea-content">
+            <%= tags.names %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
