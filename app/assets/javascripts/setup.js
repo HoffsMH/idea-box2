@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  $("#submit-idea-btn").on("click", function () {submit_idea()})
   $.ajaxSetup({
     url: "api/v1/ideas",
     headers: {
@@ -10,4 +11,5 @@ $(document).ready(function () {
     }
   });
   refresh_ideas();
+
 })
