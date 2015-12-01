@@ -1,9 +1,9 @@
 class CreateIdeas < ActiveRecord::Migration
   def change
     create_table :ideas do |t|
-      t.string :email
+      t.string :email, default: "johndoe@johndoe.com"
       t.string :title
-      t.integer :quality
+      t.integer :quality, default: 0
       t.string :body
       t.hstore :tags
 
