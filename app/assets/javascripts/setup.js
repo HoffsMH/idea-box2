@@ -1,5 +1,6 @@
 $(document).ready(function () {
   $("#submit-idea-btn").on("click", function () {submit_idea()})
+  $("#delete-idea-btn").on("click", function () {delete_idea(this)})
   $.ajaxSetup({
     url: "api/v1/ideas",
     headers: {
