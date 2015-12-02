@@ -14,3 +14,4 @@ $(document).ready(function () {
   refresh_ideas();
 
 })
+const $FIRST_ROW = $(".first-content-row")
