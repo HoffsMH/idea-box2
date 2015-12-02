@@ -1,6 +1,5 @@
-
-function add_idea(idea_data) {
+function add_idea(idea_data, row) {
     idea_template().done(function (data) {
-    $(".first-content-row").append(_.template(data)(idea_data))
+    row.after(_.template(data)(idea_data))
   })
 }

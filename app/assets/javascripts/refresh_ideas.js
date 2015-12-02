@@ -1,7 +1,7 @@
 function refresh_ideas () {
   $.getJSON("api/v1/ideas").then(function (data) {
     data.forEach(function (idea) {
-    add_idea(idea);
+    add_idea(idea, $FIRST_ROW);
     })
   })
   $(".rate-btn-down").on("click", function () {

@@ -2,12 +2,12 @@ class Api::V1::IdeasController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Idea.all.order(:updated_at).reverse
+    respond_with Idea.all.order(:updated_at)
   end
   def create
     idea = Idea.new(title: idea_params[:title], body: idea_params[:body], tags: {names: idea_params[:tags]})
     if idea.save
-      render json: {success: true, errors: idea.errors.full_messages}, status: 200
+      render json: idea.attributes, status: 200
     else
       render json: {success: false, errors: idea.errors.full_messages.join(", ")}, status: 500
     end

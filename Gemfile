@@ -20,9 +20,18 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
+
+
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :test do
 end
