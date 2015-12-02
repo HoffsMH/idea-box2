@@ -100,5 +100,19 @@ RSpec.describe Idea, type: :model do
       idea.downgrade
       expect(idea.quality).to eq("swill")
     end
+
+    it "can do both using #change"  do
+      plausible_attributes = valid_attributes
+      plausible_attributes[:quality] = "plausible"
+
+      idea = Idea.new(plausible_attributes)
+      expect(idea.quality).to eq("plausible")
+
+      idea.change("down")
+      expect(idea.quality).to eq("swill")
+
+      idea.change("up")
+      expect(idea.quality).to eq("plausible")
+    end
   end
 end
