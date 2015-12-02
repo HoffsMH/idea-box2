@@ -2,7 +2,7 @@ class Api::V1::IdeasController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Idea.all.order(:updated_at).reverse
+    respond_with Idea.all.order(:updated_at)
   end
   def create
     idea = Idea.new(title: idea_params[:title], body: idea_params[:body], tags: {names: idea_params[:tags]})

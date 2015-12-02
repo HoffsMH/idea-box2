@@ -7,8 +7,9 @@ RSpec.feature "UserCanSeeForms", type: :feature do
   end
   it "can see all teh featurez", js: true do
     visit "/"
-    # expect(page).to have_content("title")
-    # byebug
+    expect(page).to have_content("Title")
+    binding.pry
+
     expect(page).to have_content("this is a test title2")
   end
 end
