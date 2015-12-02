@@ -1,11 +1,12 @@
-function delete_idea(button) {
+function upgrade_idea(button) {
   var id = $(button).closest(".idea").attr("id")
   $.ajax({
     url: "api/v1/ideas/" + id,
-    method: "delete"
+    method: "patch",
+    data: "up"
   })
   .then(function(data) {
-    $(".idea#" + data.id).remove();
+    $(".idea#" + data.id + " .quality").html(data.quality)
   })
   .fail(function() {
     console.log("fail")
