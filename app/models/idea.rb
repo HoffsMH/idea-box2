@@ -16,4 +16,21 @@ class Idea < ActiveRecord::Base
       update(quality: current + 1 )
     end
   end
+
+  def downgrade
+    current = attributes["quality"]
+    if current > 0
+      update(quality: current - 1 )
+    end
+  end
+
+  def change(direction)
+    {
+      "up" =>  proc {upgrade},
+      "down" => proc {downgrade}
+    }[direction].call
+  end
+
+
+
 end
