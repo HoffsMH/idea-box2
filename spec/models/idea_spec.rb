@@ -86,5 +86,33 @@ RSpec.describe Idea, type: :model do
       idea.upgrade
       expect(idea.quality).to eq("genius")
     end
+
+    it "can downgrade an idea" do
+      genius_attributes = valid_attributes
+      genius_attributes[:quality] = "genius"
+
+      idea = Idea.new(genius_attributes)
+      expect(idea.quality).to eq("genius")
+
+      idea.downgrade
+      expect(idea.quality).to eq("plausible")
+
+      idea.downgrade
+      expect(idea.quality).to eq("swill")
+    end
+
+    it "can do both using #change"  do
+      plausible_attributes = valid_attributes
+      plausible_attributes[:quality] = "plausible"
+
+      idea = Idea.new(plausible_attributes)
+      expect(idea.quality).to eq("plausible")
+
+      idea.change("down")
+      expect(idea.quality).to eq("swill")
+
+      idea.change("up")
+      expect(idea.quality).to eq("plausible")
+    end
   end
 end

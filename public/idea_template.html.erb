@@ -36,17 +36,14 @@
             </div>
         </div>
       </div>
-      <div class="row">
+
+      <div class="row <%=(function() { if (!tags.names) {return "hidden"}})() %>">
         <div class="col s12">
           <h5>Tags:</h5>
           <div class="tag-content card-panel light-green lighten-5">
             <%= tags.names %>
           </div>
         </div>
-      </div>
-      <div class="row">
-
-
       </div>
     </div>
 

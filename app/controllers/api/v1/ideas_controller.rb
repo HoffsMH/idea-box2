@@ -2,7 +2,7 @@ class Api::V1::IdeasController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Idea.all.order(:updated_at)
+    respond_with Idea.all.order(:created_at)
   end
 
   def create
@@ -25,7 +25,7 @@ class Api::V1::IdeasController < ApplicationController
 
   def update
     idea = Idea.find_by(id: id)
-    if idea.upgrade
+    if idea.change(direction)
       render json: idea.json_hash, status: 200
     else
       render json: {success: false, errors: idea.errors.full_messages.join(", ")}, status: 500
@@ -37,9 +37,12 @@ class Api::V1::IdeasController < ApplicationController
   def idea_params
     params.require(:idea)
   end
+
   def id
     params.require(:id).to_i
   end
 
-
+  def direction
+    params.require(:direction)
+  end
 end
