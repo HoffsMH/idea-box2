@@ -1,12 +1,16 @@
 function upgrade_idea(button) {
   var id = $(button).closest(".idea").attr("id")
+  var idea_id = id.replace("idea-", "");
+  console.log(idea_id)
   $.ajax({
-    url: "api/v1/ideas/" + id,
+    url: "api/v1/ideas/" + idea_id,
     method: "patch",
-    data: "up"
+    data: {
+            direction: "up"
+          }
   })
   .then(function(data) {
-    $(".idea#" + data.id + " .quality").html(data.quality)
+    $(".idea#" + "idea-" + data.id + " .quality").html(data.quality)
   })
   .fail(function() {
     console.log("fail")

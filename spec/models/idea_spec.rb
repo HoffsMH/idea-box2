@@ -53,5 +53,38 @@ RSpec.describe Idea, type: :model do
       expect(idea).not_to be_valid
     end
 
+    it "has a default quality of swill" do
+      no_quality = valid_attributes
+      no_quality.delete(:quality)
+      idea = Idea.new(no_quality)
+
+      expect(idea.quality).to eq("swill")
+    end
+
+  end
+
+  context "upgrading and Down grading" do
+    let!(:valid_attributes) do
+      {
+        email: "some_dude@somedude.com",
+        title: "valid title",
+        quality: "swill",
+        body: "valid body",
+        tags: {
+          names: ["these", "are", "valid", "tags"]
+        }
+      }
+    end
+
+    it "can upgrade an idea" do
+      idea = Idea.new(valid_attributes)
+      expect(idea.quality).to eq("swill")
+
+      idea.upgrade
+      expect(idea.quality).to eq("plausible")
+
+      idea.upgrade
+      expect(idea.quality).to eq("genius")
+    end
   end
 end
