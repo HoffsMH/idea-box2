@@ -22,6 +22,17 @@ class Api::V1::IdeasController < ApplicationController
       render json: {success: false, errors: idea.errors.full_messages.join(", ")}, status: 500
     end
   end
+
+  def update
+    idea = Idea.find_by(id: id)
+    if idea.upgrade
+      render json: idea.json_hash, status: 200
+    else
+      render json: {success: false, errors: idea.errors.full_messages.join(", ")}, status: 500
+    end
+
+  end
+
   private
   def idea_params
     params.require(:idea)

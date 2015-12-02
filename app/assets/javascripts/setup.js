@@ -1,6 +1,4 @@
 $(document).ready(function () {
-  $("#submit-idea-btn").on("click", function () {submit_idea()})
-  $("#delete-idea-btn").on("click", function () {delete_idea(this)})
   $.ajaxSetup({
     url: "api/v1/ideas",
     headers: {
@@ -13,6 +11,7 @@ $(document).ready(function () {
     }
   });
   refresh_ideas();
+  bind_buttons();
 
 })
 const $FIRST_ROW = $(".first-content-row")

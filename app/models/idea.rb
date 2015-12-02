@@ -9,4 +9,11 @@ class Idea < ActiveRecord::Base
     output["quality"] = quality
     output
   end
+
+  def upgrade
+    current = attributes["quality"]
+    if current < 2
+      update(quality: current + 1 )
+    end
+  end
 end
