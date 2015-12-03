@@ -28,6 +28,9 @@ nav .row {
   border-color: #C5E1A5;
 
 }
+.quality {
+  font-size: 20px;
+}
 a.rate-btn-up {
   color: #66BB6A;
 }
@@ -40,6 +43,17 @@ a.delete-idea-btn {
 }
 a.idea-btn, .search-bar-icon {
   cursor: pointer;cursor: hand;
+}
+
+.plausible {
+  color: #f57f17;
+}
+.swill {
+  color: #8d6e63;
+}
+
+.genius {
+  color: #64dd17;
 }
 
 #refresh-btn {

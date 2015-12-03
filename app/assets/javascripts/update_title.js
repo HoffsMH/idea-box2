@@ -14,8 +14,8 @@ function update_title() {
   .then(function(data) {
     progressbar().replaceWith(data.title)
   })
-  .fail(function() {
-    progressbar().replaceWith(data.title)
+  .fail(function(data) {
+    progressbar().replaceWith(JSON.parse(data.responseText).title)
   });
 }
 

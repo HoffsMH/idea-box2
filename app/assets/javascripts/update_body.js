@@ -14,8 +14,8 @@ function update_body() {
   .then(function(data) {
     progressbar().replaceWith(data.body)
   })
-  .fail(function() {
-    console.log("fail")
+  .fail(function(data) {
+    progressbar().replaceWith(JSON.parse(data.responseText).body)
   });
 }
 

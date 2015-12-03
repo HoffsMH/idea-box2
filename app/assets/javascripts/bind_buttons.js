@@ -25,5 +25,6 @@ function bind_buttons() {
   $(document).on("focusout", ".edit-body", update_body )
 
   //allows enter to submit text when editing our ideas
-  $(document).on('keyup', '.edit-idea', clear_edit_text_field);
+  $(document).on('keyup', '.edit-idea', check_for_enter);
+  $(document).on('keyup', '#search', check_for_enter);
 }

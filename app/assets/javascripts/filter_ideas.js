@@ -18,7 +18,8 @@ function hide_all_ideas() {
 
 function matched_ideas(value) {
   return $(".idea").filter(function (index) {
-    content  = $(this).find(".body-content").html().toUpperCase();
-    return content.includes(value)
+    body_content  = $(this).find(".body-content").html().toUpperCase();
+    title_content  = $(this).find(".title-content").html().toUpperCase();
+    return body_content.includes(value) || title_content.includes(value)
   })
 }

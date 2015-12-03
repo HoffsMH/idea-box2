@@ -17,8 +17,3 @@ function clear_search_bar() {
   $("#search").val("")
   $("#search").blur()
 }
-
-function clear_edit_text_field(event) {
-  // https://css-tricks.com/snippets/javascript/javascript-keycodes/
-  if ( event.keyCode === 13 ) { $(this).blur()}
-}
