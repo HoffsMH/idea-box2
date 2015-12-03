@@ -38,8 +38,14 @@ a.rate-btn-down {
 a.delete-idea-btn {
   color: #90CAF9;
 }
-a.idea-btn {
+a.idea-btn, .search-bar-icon {
   cursor: pointer;cursor: hand;
+}
+
+#refresh-btn {
+  cursor: pointer;cursor: hand;
+  color: #8BC34A;
+  font-size: 3rem;
 }
 
 #errors-row {

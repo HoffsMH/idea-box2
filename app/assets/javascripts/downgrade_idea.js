@@ -1,5 +1,5 @@
-function downgrade_idea(button) {
-  var id = $(button).closest(".idea").attr("id")
+function downgrade_idea() {
+  var id = $(this).closest(".idea").attr("id")
   var idea_id = id.replace("idea-", "");
   console.log(idea_id)
   $.ajax({
