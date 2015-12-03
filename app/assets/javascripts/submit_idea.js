@@ -12,10 +12,12 @@ function submit_idea() {
         tags: tags
       }
     }
-  }).then(function (data){
+  })
+  .then(function (data){
     clear_fields();
     add_idea(data, $FIRST_ROW);
-  }).fail(function (data) {
+  })
+  .fail(function (data) {
     var error_text = JSON.parse(data.responseText).errors
     $("#errors-row").html(error_text)
     refresh_ideas();
