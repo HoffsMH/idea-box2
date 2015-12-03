@@ -101,17 +101,17 @@ RSpec.describe Idea, type: :model do
       expect(idea.quality).to eq("swill")
     end
 
-    it "can do both using #change"  do
+    it "can do both using #change_rating"  do
       plausible_attributes = valid_attributes
       plausible_attributes[:quality] = "plausible"
 
       idea = Idea.new(plausible_attributes)
       expect(idea.quality).to eq("plausible")
 
-      idea.change("down")
+      idea.change_rating("down")
       expect(idea.quality).to eq("swill")
 
-      idea.change("up")
+      idea.change_rating("up")
       expect(idea.quality).to eq("plausible")
     end
   end
