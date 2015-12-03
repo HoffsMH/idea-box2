@@ -24,13 +24,18 @@ class Idea < ActiveRecord::Base
     end
   end
 
-  def change(direction)
+  def change_rating(direction)
     {
-      "up" =>  proc {upgrade},
-      "down" => proc {downgrade}
+      "up"   =>  proc {upgrade},
+      "down" =>  proc {downgrade},
+      nil    =>  proc {false}
     }[direction].call
   end
 
+  def edit_title(new_title)
+    update()
+
+  end
 
 
 end

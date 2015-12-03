@@ -6,7 +6,7 @@ function delete_idea() {
     method: "delete"
   })
   .then(function(data) {
-    $(".idea#" + "idea-" + data.id).remove();
+    $(".idea#" + "idea-" + data.id).slideUp("fast", function(){$(this).remove()})
   })
   .fail(function() {
     console.log("fail")

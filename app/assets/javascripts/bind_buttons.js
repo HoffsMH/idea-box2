@@ -15,7 +15,15 @@ function bind_buttons() {
   $(document).on("focusout", "#search", show_results_or_form )
 
   $(document).on("keyup", "#search", filter_ideas )
-  $(document).on("click", ".clear-search-bar", clear_search_bar )
-  $(document).on("click", ".search-bar-icon", clear_search_bar )
+  $(document).on("click", ".clear-search-bar , .search-bar-icon", clear_search_bar )
+  // $(document).on("click", ".search-bar-icon", clear_search_bar )
 
+  //editing
+  $(document).on("click", ".title-content", edit_title_form )
+  $(document).on("click", ".body-content", edit_body_form )
+  $(document).on("focusout", ".edit-title", update_title )
+  $(document).on("focusout", ".edit-body", update_body )
+
+  //allows enter to submit text when editing our ideas
+  $(document).on('keyup', '.edit-idea', clear_edit_text_field);
 }

@@ -1,7 +1,6 @@
 function upgrade_idea() {
   var id = $(this).closest(".idea").attr("id")
   var idea_id = id.replace("idea-", "");
-  console.log(idea_id)
   $.ajax({
     url: "api/v1/ideas/" + idea_id,
     method: "patch",
