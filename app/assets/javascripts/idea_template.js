@@ -1,5 +1,5 @@
 function idea_template() {
-  return $.ajax({
+    return $.ajax({
     url: "idea_template.html.erb",
     success: function (data) {
       return data
