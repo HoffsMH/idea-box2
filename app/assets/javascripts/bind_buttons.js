@@ -6,4 +6,17 @@ function bind_buttons() {
   //changing idea quality
   $(document).on("click", ".rate-btn-up", function () {upgrade_idea(this)})
   $(document).on("click", ".rate-btn-down", function () {downgrade_idea(this)})
+
+  //filtering
+  $(document).on("focusin", "#search", function () {$(".first-content-row").slideUp("fast")})
+
+  $(document).on("focusout", "#search", function () {
+     if (!$("#search").val()) {
+      show_all_ideas()
+      $(".first-content-row").slideDown("fast")
+    }
+  })
+
+  $(document).on("keyup", "#search", function () {filter_ideas($("#search").val());})
+
 }
